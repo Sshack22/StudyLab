@@ -3,4 +3,4 @@
 
 
 # Members:
-# Steven Shackelford --- ss223023@my.stchas.edu
+Steven Shackelford --- ss223023@my.stchas.edu
