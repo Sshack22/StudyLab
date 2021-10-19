@@ -40,7 +40,13 @@ public class Login extends HttpServlet {
 		UserLogin login = new UserLogin();
 		String result = login.userLogin(member);
 		response.getWriter().print(result);
-		if (result.equals("true")) { response.sendRedirect("Menu.jsp");
+		if (result.equals("true")) { 
+			
+			request.getSession().setAttribute("member", member);
+			request.getRequestDispatcher("/Menu.jsp").forward(request, response);
+			//response.sendRedirect("Menu.jsp");
+			
+			
 		} else { response.sendRedirect("InvalidUser.jsp"); }
 		
 		

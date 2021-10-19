@@ -42,6 +42,7 @@ public class Register extends HttpServlet {
 		UserRegister register = new UserRegister();
 		String result = register.insert(member);
 		response.getWriter().print(result);
+		response.sendRedirect("memberRegister.jsp");
 		
 
 	}

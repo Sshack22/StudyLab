@@ -11,6 +11,7 @@
 	
 		<h1>You have successfully logged in</h1>
 		<h2>What would you like to do?</h2>
+		<input type = "submit" name = "button1" value = "button1" />
 		
 	</form>
 
