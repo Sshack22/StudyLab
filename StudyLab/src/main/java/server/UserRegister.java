@@ -44,6 +44,9 @@ public class UserRegister {
 			ps.setString(1, member.getUserName());
 			ps.setString(2, member.getPassword());
 			ps.executeUpdate();
+			sql = "CREATE TABLE " + member.getUserName() + " (title VARCHAR(255), body LONGTEXT);";
+			ps = con.prepareStatement(sql);
+			ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
