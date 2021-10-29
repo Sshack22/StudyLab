@@ -50,8 +50,8 @@ public class Menu extends HttpServlet {
 			response.sendRedirect("memberRegister.jsp");
 		}
 		if (request.getParameter("button3") != null) {
-			//test git 
-			
+			//test git  
+			 
 			
 		}
 		
