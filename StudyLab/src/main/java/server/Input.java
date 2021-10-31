@@ -6,19 +6,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class Menu
+ * Servlet implementation class Input
  */
-@WebServlet("/Menu")
-public class Menu extends HttpServlet {
+@WebServlet("/Input")
+public class Input extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Menu() {
+    public Input() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,26 +34,8 @@ public class Menu extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		Member member = (Member) request.getSession().getAttribute("member");
-		if (member.getUserName().equals(null)) {
-			response.sendRedirect("InvalidUser.jsp");
-		}
-		if (request.getParameter("button1") != null) {
-			response.getWriter().print(member.getUserName());
-		}
-		if (request.getParameter("button2") != null) {
-			HttpSession session = request.getSession();
-			session.invalidate();
-			response.sendRedirect("memberRegister.jsp");
-		}
-		if (request.getParameter("button3") != null) {
-			//test git   
-			 
-			
-		}
-		
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
