@@ -8,25 +8,5 @@
 </head>
 <body>
 
-
-<form action="Input" method="post">
-
-
-
-<input type="submit" name="add" value="add"/>
-<input type="submit" name="edit" value="edit"/>
-<input type="submit" name="delete" value="delete"/>
-
-
-
-
-
-</form>
-
-
-
-
-
-
 </body>
 </html>

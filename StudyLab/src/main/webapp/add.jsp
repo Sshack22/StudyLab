@@ -9,24 +9,20 @@
 <body>
 
 
-<form action="Input" method="post">
+<table>
 
+	<tr>
+		<td>title</td>
+		<td><input type="text" name="title"/></td>	
+	</tr>
+	<tr>
+		<td></td>
+		<td><textarea id="input" name="input" rows="4" cols="50"></textarea></td>
+		</tr>
+		
+		
 
-
-<input type="submit" name="add" value="add"/>
-<input type="submit" name="edit" value="edit"/>
-<input type="submit" name="delete" value="delete"/>
-
-
-
-
-
-</form>
-
-
-
-
-
+</table>
 
 </body>
 </html>

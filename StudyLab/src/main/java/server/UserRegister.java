@@ -39,7 +39,9 @@ public class UserRegister {
 		String result = "Data entered succesfully";
 		String sql = "insert into userdb.member values(?,?)";
 
-		try {
+		try {					//TODO:	create unique user check so
+								//		user does not already exist
+								//		in database
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, member.getUserName());
 			ps.setString(2, member.getPassword());

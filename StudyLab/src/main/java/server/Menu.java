@@ -49,11 +49,25 @@ public class Menu extends HttpServlet {
 			session.invalidate();
 			response.sendRedirect("memberRegister.jsp");
 		}
-		if (request.getParameter("button3") != null) {
-			//test git   
-			 
+		if (request.getParameter("add") != null) {
+			
 			
 		}
+		if (request.getParameter("edit") != null) {
+			
+			
+		}
+		if (request.getParameter("delete") != null) {
+			
+			
+		}
+		if (request.getParameter("premade") != null) {
+			
+			
+		}
+		
+		
+		
 		
 	}
 
