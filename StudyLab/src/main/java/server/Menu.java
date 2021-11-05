@@ -51,7 +51,8 @@ public class Menu extends HttpServlet {
 		}
 		if (request.getParameter("add") != null) {
 			
-			
+			//request.getRequestDispatcher("/Input").forward(request, response);
+			response.sendRedirect("Input");
 		}
 		if (request.getParameter("edit") != null) {
 			

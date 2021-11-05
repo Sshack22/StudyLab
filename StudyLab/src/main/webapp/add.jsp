@@ -19,6 +19,7 @@
 		<td></td>
 		<td><textarea id="input" name="input" rows="4" cols="50"></textarea></td>
 		</tr>
+		<tr><td><input type="submit" name="print" value="print"/></td></tr>
 		
 		
 

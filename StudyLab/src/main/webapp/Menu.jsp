@@ -29,7 +29,7 @@ if (session.getAttribute("member") == null)
 		
 		<input type="submit" name="button1" value="test print username" />
 		<input type="submit" name="button2" value="Logout" />
-		<input type="submit" name="add" value="add"/>
+		<input type="submit" name="add" value="add" onclick="Form.action='Input';"/>
 		<input type="submit" name="edit" value="edit"/>
 		<input type="submit" name="delete" value="delete"/>
 		<input type="submit" name="premade" value="premade"/>

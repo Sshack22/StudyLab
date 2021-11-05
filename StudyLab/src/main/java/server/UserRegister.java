@@ -3,6 +3,7 @@ package server;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserRegister {
@@ -38,10 +39,26 @@ public class UserRegister {
 		Connection con = getConnection();
 		String result = "Data entered succesfully";
 		String sql = "insert into userdb.member values(?,?)";
+		
+		try {
+			String uniqueUser = "select * from userdb.member where username = ?";
+			PreparedStatement ps = con.prepareStatement(uniqueUser);
+			ps.setString(1, member.getUserName());
+			ResultSet rs = ps.executeQuery(uniqueUser);
+			if (rs.absolute(1)) {
+				result = "user already exists";
+				return result;
+				
+			}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			result = "user already exists";
+			return result;
+		}
 
-		try {					//TODO:	create unique user check so
-								//		user does not already exist
-								//		in database
+		try {					
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, member.getUserName());
 			ps.setString(2, member.getPassword());
