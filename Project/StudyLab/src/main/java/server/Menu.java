@@ -60,7 +60,7 @@ public class Menu extends HttpServlet {
 		}
 		if (request.getParameter("delete") != null) {
 			
-			
+			response.sendRedirect("Delete");
 		}
 		if (request.getParameter("premade") != null) {
 			
