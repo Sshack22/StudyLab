@@ -1,0 +1,27 @@
+package input;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import server.Member;
+
+public class CategoryDAO {
+	private String dburl = "jdbc:mysql://localhost:9999/userdb";
+	private String dbUname = "root";
+	private String dbPassword = "mysql";
+	
+	public List<Category> list(Member member) throws SQLException {
+		List<Category> listCategory = new ArrayList<>();
+		
+		try (Connection connection = DriverManager.getConnection(dburl, dbUname, dbPassword)) {
+			String sql = "SELECT * FROM ? ORDER BY title";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, member.getUserName());
+		}
+	}
+
+}

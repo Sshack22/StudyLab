@@ -1,0 +1,40 @@
+package input;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class CatalogDAO {
+	private String dburl = "jdbc:mysql://localhost:9999/userdb";
+	private String dbUname = "root";
+	private String dbPassword = "mysql";
+
+	public List<Catalog> list() throws SQLException {
+		List<Catalog> listCatalog = new ArrayList<>();
+
+		try (Connection connection = DriverManager.getConnection(dburl, dbUname, dbPassword)) {
+			String sql = "SELECT * FROM ? ORDER BY title";
+			Statement statement = connection.createStatement();
+			ResultSet result = statement.executeQuery(sql);
+
+			while (result.next()) {
+				String title = result.getString("title");
+				Catalog catalog = new Catalog(title);
+
+				listCatalog.add(catalog);
+
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw e;
+		}
+		return listCatalog;
+	}
+
+}
