@@ -23,7 +23,7 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" value="Register"></td>
+				<td><input type="submit" value="Register" onclick = "form.action='Register';"></td>
 			</tr>
 		</table>
 

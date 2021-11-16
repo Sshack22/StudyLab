@@ -24,8 +24,7 @@ if (session.getAttribute("member") == null)
 
 	<form action="Menu" method="post">
 
-		<h1>You have successfully logged in</h1>
-		<h2>What would you like to do?</h2>
+		<h1>What would you like to do?</h1>
 		
 		<input type="submit" name="button1" value="test print username" />
 		<input type="submit" name="button2" value="Logout" />

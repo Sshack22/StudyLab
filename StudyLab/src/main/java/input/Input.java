@@ -29,9 +29,7 @@ public class Input extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Member member = (Member) request.getSession().getAttribute("member");
-		response.getWriter().print(member.getUserName());
-		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -40,7 +38,15 @@ public class Input extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Member member = (Member) request.getSession().getAttribute("member");
-		response.getWriter().print(member.getUserName());
+		if (request.getParameter("print") != null) {
+			String title = request.getParameter("title");
+			String body = request.getParameter("body");
+			String result = MenuMethods.userInput(member, title, body);
+			if (result.equals("1")) {
+				request.getRequestDispatcher("/Menu.jsp").forward(request, response);
+			} else { response.getWriter().append("Served at: ").append(request.getContextPath()); }
+			
+		}
 	}
 
 }

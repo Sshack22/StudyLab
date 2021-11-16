@@ -52,10 +52,10 @@ public class Menu extends HttpServlet {
 		if (request.getParameter("add") != null) {
 			
 			//request.getRequestDispatcher("/Input").forward(request, response);
-			response.sendRedirect("Input");
+			response.sendRedirect("add.jsp");
 		}
 		if (request.getParameter("edit") != null) {
-			
+			response.sendRedirect("Edit");
 			
 		}
 		if (request.getParameter("delete") != null) {

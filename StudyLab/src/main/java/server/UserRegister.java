@@ -41,7 +41,8 @@ public class UserRegister {
 		String sql = "insert into userdb.member values(?,?)";
 		
 		try {
-			String uniqueUser = "select * from userdb.member where username = ?";
+			String uniqueUser = "SELECT * FROM userdb.member WHERE username = ?";			
+			
 			PreparedStatement ps = con.prepareStatement(uniqueUser);
 			ps.setString(1, member.getUserName());
 			ResultSet rs = ps.executeQuery(uniqueUser);
@@ -54,7 +55,7 @@ public class UserRegister {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			result = "user already exists";
+			result = "an error has occured";
 			return result;
 		}
 

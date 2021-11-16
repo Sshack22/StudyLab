@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,22 +8,24 @@
 </head>
 <body>
 
+	<form action="Input" method="post">
+		<table>
 
-<table>
+			<tr>
+				<td>title</td>
+				<td><input type="text" name="title" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><textarea id="input" name="body" rows="4" cols="50"></textarea></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="print" value="add" /></td>
+			</tr>
 
-	<tr>
-		<td>title</td>
-		<td><input type="text" name="title"/></td>	
-	</tr>
-	<tr>
-		<td></td>
-		<td><textarea id="input" name="input" rows="4" cols="50"></textarea></td>
-		</tr>
-		<tr><td><input type="submit" name="print" value="print"/></td></tr>
-		
-		
 
-</table>
 
+		</table>
+	</form>
 </body>
 </html>
