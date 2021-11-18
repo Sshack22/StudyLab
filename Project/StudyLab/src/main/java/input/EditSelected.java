@@ -45,7 +45,7 @@ public class EditSelected extends HttpServlet {
 		String newTitle = request.getParameter("newtitle");
 		//String selected = (String) request.getSession().getAttribute("title12");
 		MenuMethods.editBody(member, selected, newTitle, newBody);
-		response.getWriter().print("success");
+		request.getRequestDispatcher("Menu.jsp").forward(request, response);
 		
 		
 		//System.out.println(selected);

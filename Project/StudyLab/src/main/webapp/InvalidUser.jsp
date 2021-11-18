@@ -9,7 +9,7 @@
 <body>
 	<form action="Invalid" method="post">
 
-		<h1>User does not exist. Please wait and try again.</h1>
+		<h1>User does not exist or Invalid User name/Password. Please wait and try again.</h1>
 
 	</form>
 

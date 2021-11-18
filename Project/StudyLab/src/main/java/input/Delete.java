@@ -23,35 +23,35 @@ import server.Member;
  */
 @WebServlet("/Delete")
 public class Delete extends HttpServlet {
-	
+
 	private String dburl = "jdbc:mysql://localhost:9999/userdb";
 	private String dbUname = "root";
 	private String dbPassword = "mysql";
 	private String dbDriver = "com.mysql.jdbc.Driver";
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Delete() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public Delete() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Member member = (Member) request.getSession().getAttribute("member");
-		
+
 		try {
 			titleList(member, request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+
+
 	}
 
 	/**
@@ -60,35 +60,41 @@ public class Delete extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Member member = (Member) request.getSession().getAttribute("member");
-		HttpSession session = request.getSession();
-		
-		
-			String selected = request.getParameter("title");
-			String textBody = MenuMethods.textBody(member, selected);
-			
-			
+		//HttpSession session = request.getSession();
+
+
+		String selected = request.getParameter("title");
+		String textBody = MenuMethods.textBody(member, selected);
+
+
+		if (request.getParameter("select") != null) {		
 			try (Connection con = getConnection()) {
 				String sql = "DELETE FROM " + member.getUserName() + " WHERE title ='" + selected + "' AND body ='" + textBody + "'";
 				PreparedStatement ps = con.prepareStatement(sql);
 				//ps.setString(1, member.getUserName());
 				ps.executeUpdate();
+			
+
+			request.getRequestDispatcher("Menu.jsp").forward(request, response);
 
 
-				request.getRequestDispatcher("Menu.jsp").forward(request, response);
-				
-				
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} }
+		if(request.getParameter("menu") != null) {
+			request.getRequestDispatcher("Menu.jsp").forward(request, response);
+		}
+		
+		
 	}
-	
-	
+
+
 	private void titleList(Member x, HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException {
 		List<String> titles = new ArrayList<>();
 		Member member = x;
 
-		
+
 		try (Connection con = getConnection()) {
 			String sql = "SELECT * FROM " + member.getUserName();
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -97,20 +103,20 @@ public class Delete extends HttpServlet {
 
 			while (rs.next()) {
 				titles.add(rs.getString(1));
-				
+
 			}
 			request.setAttribute("titleList", titles);
 			request.getRequestDispatcher("Delete.jsp").forward(request, response);
-			
-			
+
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	
-	
+
+
 	public Connection getConnection() {
 
 		loadDriver(dbDriver);
@@ -122,7 +128,7 @@ public class Delete extends HttpServlet {
 		}
 		return con;
 	}
-	
+
 	public void loadDriver(String dbDriver) {
 		try {
 			Class.forName(dbDriver);
@@ -130,7 +136,7 @@ public class Delete extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+
 
 }

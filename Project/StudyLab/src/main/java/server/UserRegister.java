@@ -45,8 +45,8 @@ public class UserRegister {
 			
 			PreparedStatement ps = con.prepareStatement(uniqueUser);
 			ps.setString(1, member.getUserName());
-			ResultSet rs = ps.executeQuery(uniqueUser);
-			if (rs.absolute(1)) {
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
 				result = "user already exists";
 				return result;
 				

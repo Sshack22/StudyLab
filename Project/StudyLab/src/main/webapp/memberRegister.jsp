@@ -10,7 +10,7 @@
 	<form action="Register" method="post">
 		<table>
 			<tr>
-				<td>User Name</td>
+				<td>User name</td>
 				<td><input type="text" name="username"></td>
 			</tr>
 			<tr>
