@@ -3,24 +3,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="form-center.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Study Lab add file</title>
 </head>
-<body>
+<body class="addbody">
 
-	<form action="Input" method="post">
+	<form class="addform" action="Input" method="post">
 		<table>
 
 			<tr>
-				<td>title</td>
-				<td><input type="text" name="title" /></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><textarea id="input" name="body" rows="4" cols="50"></textarea></td>
+				<td>Title</td>
+				<td><input style="width: 100%" type="text" name="title" /></td>
 			</tr>
 			<tr>
 				<td><input type="submit" name="print" value="add" /></td>
+				<td><textarea id="input" name="body" rows="40" cols="100%"></textarea></td>
+			</tr>
+			<tr>
+				<td></td>
 			</tr>
 
 
