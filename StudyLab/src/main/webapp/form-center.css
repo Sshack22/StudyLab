@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+
+*{
+  box-sizing:border-box;           /* easier box-model calculations */
+  -webkit-box-sizing: border-box;
+}
+
+html, body {
+	height: 95%;
+	width: 98%;
+	margin: 10px;
+}
+
+#rectangle {
+	width: 300px;
+	height: 300px;
+	position: fixed;
+	margin-left: -150px; /* half of width */
+	margin-top: -150px; /* half of height */
+	top: 50%;
+	left: 50%;
+	background: #DCDCDC;
+	border-style: solid;
+}
+
+#editdiv {
+	width: 300px;
+	height: 300px;
+	position: fixed;
+	margin-left: -150px; /* half of width */
+	margin-top: -150px; /* half of height */
+	top: 65%;
+	left: 50%;
+    text-align:centr;
+}
+
+#editdiv * {
+	text-align: center;
+}
+
+select {
+display: block;
+margin: 0 auto;
+}
+
+.editbody {
+	background-color: #F8F8FF;
+}
+
+.landingbody {
+	background-color: grey;
+}
+
+.box {
+	width: 300px;
+	height: 300px;
+	background-color: #d9d9d9;
+	position: fixed;
+	margin-left: -150px; /* half of width */
+	margin-top: -150px; /* half of height */
+	top: 50%;
+	left: 50%;
+}
+
+.menuform {
+	width: 300px;
+	height: 300px;
+	position: fixed;
+	margin-left: -143px; /* half of width */
+	margin-top: -150px; /* half of height */
+	top: 50%;
+	left: 50%;
+}
+
+select {
+	display: block;
+	margin: 0 auto;
+}
+
+.addbody {
+	background-color: #F8F8FF;
+}
+
+.adddiv {
+	resize: both;
+	overflow: auto;
+	background-color: #F8F8FF;
+}
+
+textarea {
+  left:10px; top:10px;
+  width:  calc(100vw - 100px);      /* calc and viewport to the rescue */
+  height: calc(100vh - 90px);
+  resize: none;
+}
+
+.vl {
+	border-right: 2px solid black;
+	height: 100%;
+	margin-right: 350px;
+}
+
+.menubody {
+	background-color: grey;
+}
+
