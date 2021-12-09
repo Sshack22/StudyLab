@@ -5,7 +5,7 @@
 <head>
 <link rel="stylesheet" href="form-center.css">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Study Lab</title>
 </head>
 <body class="landingbody">
 <div>

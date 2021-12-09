@@ -38,7 +38,7 @@ public class Delete extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
+	/** Calls [titleList] to fill titles when landing on {Delete} page
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -54,13 +54,11 @@ public class Delete extends HttpServlet {
 
 	}
 
-	/**
+	/**Selects the title and body from {Delete.jsp} and drops them from the user table
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		Member member = (Member) request.getSession().getAttribute("member");
-		//HttpSession session = request.getSession();
 
 
 		String selected = request.getParameter("title");
@@ -73,23 +71,25 @@ public class Delete extends HttpServlet {
 				PreparedStatement ps = con.prepareStatement(sql);
 				//ps.setString(1, member.getUserName());
 				ps.executeUpdate();
-			
-
-			request.getRequestDispatcher("Menu.jsp").forward(request, response);
 
 
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} }
+				request.getRequestDispatcher("Menu.jsp").forward(request, response);
+
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} }
 		if(request.getParameter("menu") != null) {
 			request.getRequestDispatcher("Menu.jsp").forward(request, response);
 		}
-		
-		
+
+
 	}
 
-
+	/**creates an array of titles from the user table to be passed into {Delete.jsp} to fill the selection box
+	 * @param x: member object being passed into the method
+	 */
 	private void titleList(Member x, HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException {
 		List<String> titles = new ArrayList<>();
 		Member member = x;
@@ -116,7 +116,7 @@ public class Delete extends HttpServlet {
 
 	}
 
-
+	//connection to database
 	public Connection getConnection() {
 
 		loadDriver(dbDriver);
@@ -128,7 +128,7 @@ public class Delete extends HttpServlet {
 		}
 		return con;
 	}
-
+	//database driver
 	public void loadDriver(String dbDriver) {
 		try {
 			Class.forName(dbDriver);

@@ -33,16 +33,21 @@ public class EditSelected extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	/**
+	/**Edits the selected title and body from the entry sent from the {Edit} page, sends the new body
+	 * and title to the {editBody} method in MenuMethods
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Member member = (Member) request.getSession().getAttribute("member");
 		HttpSession session = request.getSession();
+		
 		String selected = (String) session.getAttribute("tempTitle");
 		String newBody = request.getParameter("newbody");
 		String newTitle = request.getParameter("newtitle");
+		if(request.getParameter("menu") != null) {
+			request.getRequestDispatcher("Menu.jsp").forward(request, response);
+		}
 		//String selected = (String) request.getSession().getAttribute("title12");
 		MenuMethods.editBody(member, selected, newTitle, newBody);
 		request.getRequestDispatcher("Menu.jsp").forward(request, response);

@@ -32,7 +32,8 @@ public class Input extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	/**
+	/**Creates a new entry by passing the user entered title and body into the {userInput} method
+	 * inside MenuMethods
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

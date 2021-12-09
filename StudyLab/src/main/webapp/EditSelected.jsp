@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="form-center.css">
-<title>Insert title here</title>
+<title>Study Lab</title>
 </head>
 <body class="addbody">
 
@@ -18,7 +18,8 @@
 			<tr>
 				<td>Title: <input value="${tempTitle}" type="text"
 					name="newtitle"><input type="submit" name="save"
-					value="save" style="margin-left: 10px" /></td>
+					value="save" style="margin-left: 10px" /> <input
+				type="submit" name="menu" value="Back" /></td>
 
 			</tr>
 			<tr>
