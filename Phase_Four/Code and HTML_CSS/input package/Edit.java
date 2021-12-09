@@ -40,7 +40,7 @@ public class Edit extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
+	/**Calls [titleList] to fill the selection box upon landing on the {Edit} page
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -57,7 +57,9 @@ public class Edit extends HttpServlet {
 
 
 	}
-
+	/**creates an array of titles from the user table to be passed into {Delete.jsp} to fill the selection box
+	 * @param x: member object being passed into the method
+	 */
 	private void titleList(Member x, HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException {
 		List<String> titles = new ArrayList<>();
 		Member member = x;
@@ -86,7 +88,7 @@ public class Edit extends HttpServlet {
 
 
 
-	/**
+	/**Sends the selected entry to be edited to the {EditSelected} jsp and servlet
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -125,7 +127,7 @@ public class Edit extends HttpServlet {
 		}
 
 	}
-
+	//Database connection
 	public Connection getConnection() {
 
 		loadDriver(dbDriver);
@@ -137,7 +139,7 @@ public class Edit extends HttpServlet {
 		}
 		return con;
 	}
-
+	//
 	public void loadDriver(String dbDriver) {
 		try {
 			Class.forName(dbDriver);

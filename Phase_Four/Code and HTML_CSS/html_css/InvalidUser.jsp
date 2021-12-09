@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv = "refresh" content = "3;http://127.0.0.1:8080/StudyLab/memberRegister.jsp" charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Study Lab</title>
 </head>
 <body>
 	<form action="Invalid" method="post">

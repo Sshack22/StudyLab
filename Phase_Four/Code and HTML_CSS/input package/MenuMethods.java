@@ -15,7 +15,7 @@ public class MenuMethods {
 	private static String dbPassword = "mysql";
 	private static String dbDriver = "com.mysql.jdbc.Driver";
 	
-	
+	//database connection
 	public static Connection getConnection() {
 
 		loadDriver(dbDriver);
@@ -27,7 +27,7 @@ public class MenuMethods {
 		}
 		return con;
 	}
-	
+	//database driver
 	public static void loadDriver(String dbDriver) {
 		try {
 			Class.forName(dbDriver);
@@ -35,7 +35,13 @@ public class MenuMethods {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Inserts entries into the user table
+	 * @param member: member object to insert entry into
+	 * @param title: user specified title to insert
+	 * @param body: user specified body to insert
+	 * @return: String to verify if entry was properly inserted into user table
+	 */
 	public static String userInput(Member member, String title, String body) {
 		
 		Connection con = getConnection();
@@ -59,6 +65,14 @@ public class MenuMethods {
 		
 	}
 	
+	/**
+	 * Edits the selected entry with selected title with the new title/body the user enters
+	 * @param member: member to update entry in user table
+	 * @param oldTitle: title of the selected entry to edit
+	 * @param newTitle: new title defined by the user
+	 * @param newBody: new body defined by the user
+	 * @return: string to verify update
+	 */
 	public static String editBody(Member member, String oldTitle, String newTitle, String newBody) {
 		
 		String status = "old";

@@ -9,7 +9,7 @@
 <head>
 <link rel="stylesheet" href="form-center.css">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Study Lab</title>
 
 </head>
 <body class="menubody">
@@ -25,7 +25,7 @@
 				onclick="Form.action='Input';" /> <input type="submit" name="edit"
 				value="Edit Entries" onclick="Form.action='Edit';" /> <input
 				type="submit" name="delete" value="Delete Entry" /> <br> <br>
-			<input type="submit" name="premade" value="Insert Premade Entry" />
+
 			<br> <br> <input type="submit" name="button2"
 				value="Logout" />
 
